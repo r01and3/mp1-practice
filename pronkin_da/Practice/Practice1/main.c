@@ -4,8 +4,8 @@
 
 void main()
 {
-	setlocale(LC_ALL, "Rus");
 	float m = 0, h, w, d, pdsp, pdvp, wood;
+	setlocale(LC_ALL, "Rus");
 	printf("Введите высоту h (180 - 220 см), ширину w (80 - 120 см) и глубину d (50 - 90 см)\n");
 	scanf("%f %f %f", &h, &w, &d);
 	if (h < 180 || h > 220 || w < 80 || w > 120 || d < 50 || d > 90)
