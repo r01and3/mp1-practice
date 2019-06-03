@@ -3,6 +3,7 @@
 #include <time.h>
 
 char NAME[5][4] = { {'m', 'e', 'a', 't'}, {'m', 'i', 'l', 'k'}, {'s', 'a', 'l', 't'}, {'f', 'i', 's', 'h'}, {'e', 'g', 'g', 's'} };
+int BARCODE[5] = { 1111, 1112, 1113, 1114, 1115 };
 int NAMEP = 0;
 float PRICE[5] = { 150.0f, 75.0f, 40.0f, 250.0f, 60.0f };
 int PRICEP = 0;
@@ -68,8 +69,8 @@ void main()
 		printf("Enter Barcode Product Code\n");
 		printf("If you want to exit, enter 0\n");
 		scanf("%d", &i);
-		in(i);
-		out(i);
+		in(BARCODE[i]);
+		out(BARCODE[i]);
 	}
 	printf("\n");
 	printf("Full Sale - %.2f\n", SALE);
