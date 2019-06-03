@@ -215,6 +215,11 @@ int ListDirectoryContents(const wchar_t *sDir, namesize a[], int n)
 	return 0;
 }
 
+void out(namesize b[],int n) {
+	int i;
+	for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+}
+
 void main()
 {
 	char* a;
@@ -231,7 +236,6 @@ void main()
 	swprintf(xa, MAX_LEN, L"%hs", a);
 	n = NumberOfFiles(xa);
 	b = (namesize*)malloc(n * sizeof(namesize));
-	printf("Hello");
 	par = ListDirectoryContents(xa, b, n);
 	if (par == 1) return;
 	while (1)
@@ -245,42 +249,42 @@ void main()
 			start = clock();
 			bubblesort(b, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 2:
 			start = clock();
 			choose(b, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 3:
 			start = clock();
 			insert(b, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 4:
 			start = clock();
 			count(b, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 5:
 			start = clock();
 			quicksort(b, 0, n - 1);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 6:
 			start = clock();
 			mergesort(b, 0, n - 1);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		default:
