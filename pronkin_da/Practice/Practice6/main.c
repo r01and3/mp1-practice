@@ -236,7 +236,7 @@ void main()
 	if (par == 1) return;
 	while (1)
 	{
-		printf("Ñhoose sorting method\n");
+		printf("Choose sorting method\n");
 		printf("1. Bubble sort\n2. Choose sort\n3. Insert sort\n4. Count sort\n5. Quick sort\n6. Merge sort\n");
 		scanf("%d", &par);
 		switch (par)
