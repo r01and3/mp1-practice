@@ -3,7 +3,7 @@
 #include <time.h>
 
 char NAME[5][4] = { {'m', 'e', 'a', 't'}, {'m', 'i', 'l', 'k'}, {'s', 'a', 'l', 't'}, {'f', 'i', 's', 'h'}, {'e', 'g', 'g', 's'} };
-int BARCODE[5] = { 1111, 1112, 1113, 1114, 1115 };
+int BARCODE[5] = { 0001, 0002, 0003, 0004, 0005 };
 int NAMEP = 0;
 float PRICE[5] = { 150.0f, 75.0f, 40.0f, 250.0f, 60.0f };
 int PRICEP = 0;
