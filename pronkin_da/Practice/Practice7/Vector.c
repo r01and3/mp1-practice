@@ -50,11 +50,8 @@ double angle(Vector v1, Vector v2) {
 		printf("Error: different dimension of vectors!");
 		return 0.0;
 	}
-	double co, p1 = 0, p2 = 0;
-	int i;
-	for (i = 0; i < v1.n; i++)p1 += v1.x[i] * v1.x[i];
-	for (i = 0; i < v2.n; i++)p2 += v2.x[i] * v2.x[i];
-	co = (scalarproduct(v1, v2)) / (sqrt(p1) * sqrt(p2));
+	double co;
+	co = (scalarproduct(v1, v2)) / (vectorlength(v1) * vectorlength(v2));
 	return acos(co);
 }
 
