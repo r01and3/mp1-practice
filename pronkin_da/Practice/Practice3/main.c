@@ -3,9 +3,9 @@
 #include <time.h>
 
 void main() {
-	srand((unsigned int)time(0));
 	int a = 1, b = 1000, x, p, i = 0;
 	char c;
+	srand((unsigned int)time(0));
 	do {
 		printf("Viberite rezim igri, otgadat chislo (1), zagadat chislo (2)\n");
 		scanf("%d", &i);
