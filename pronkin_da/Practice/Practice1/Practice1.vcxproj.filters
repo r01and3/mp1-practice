@@ -7,7 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="E:\Web\main.c">
+    <ClCompile Include="main.c">
       <Filter>Заголовочные файлы</Filter>
     </ClCompile>
   </ItemGroup>

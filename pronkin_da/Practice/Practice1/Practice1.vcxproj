@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="E:\Web\main.c" />
+    <ClCompile Include="main.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{ABFA6681-3C97-4FE5-BA22-C81A477F8BC4}</ProjectGuid>
