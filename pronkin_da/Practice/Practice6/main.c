@@ -215,6 +215,11 @@ int ListDirectoryContents(const wchar_t *sDir, namesize a[], int n)
 	return 0;
 }
 
+void out(namesize b[],int n) {
+	int i;
+	for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+}
+
 void main()
 {
 	char* a;
@@ -231,56 +236,60 @@ void main()
 	swprintf(xa, MAX_LEN, L"%hs", a);
 	n = NumberOfFiles(xa);
 	b = (namesize*)malloc(n * sizeof(namesize));
-	printf("Hello");
 	par = ListDirectoryContents(xa, b, n);
 	if (par == 1) return;
 	while (1)
 	{
-		printf("Ñhoose sorting method\n");
+		namesize* b0;
+		b0 = (namesize*)malloc(n * sizeof(namesize));
+		memcpy(b0, b, n*sizeof(namesize));
+		out(b0, n);
+		out(b, n);
+		printf("Choose sorting method\n");
 		printf("1. Bubble sort\n2. Choose sort\n3. Insert sort\n4. Count sort\n5. Quick sort\n6. Merge sort\n");
 		scanf("%d", &par);
 		switch (par)
 		{
 		case 1:
 			start = clock();
-			bubblesort(b, n);
+			bubblesort(b0, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b0, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 2:
 			start = clock();
-			choose(b, n);
+			choose(b0, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b0, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 3:
 			start = clock();
-			insert(b, n);
+			insert(b0, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b0, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 4:
 			start = clock();
-			count(b, n);
+			count(b0, n);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b0, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 5:
 			start = clock();
-			quicksort(b, 0, n - 1);
+			quicksort(b0, 0, n - 1);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b0, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		case 6:
 			start = clock();
-			mergesort(b, 0, n - 1);
+			mergesort(b0, 0, n - 1);
 			end = clock();
-			for (i = 0; i < n; i++) wprintf(L"File: %ls Size: %lld\n", b[i].Name, b[i].Size);
+			out(b0, n);
 			printf("Sort time: %.4lf\n", (double)(end - start) / CLOCKS_PER_SEC);
 			break;
 		default:
@@ -289,9 +298,6 @@ void main()
 		}
 		printf("Enter 1 if you want to continue or 0 if you want to exit: ");
 		scanf("%d", &f);
-		free(b);
-		b = (namesize*)malloc(n * sizeof(namesize));
-		ListDirectoryContents(xa, b, n);
 		if (f == 0) return;
 	}
 }
