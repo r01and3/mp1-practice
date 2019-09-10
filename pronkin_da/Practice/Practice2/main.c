@@ -4,11 +4,11 @@
 #include <time.h>
 
 void main() {
-	srand((unsigned int)time(0));
 	int n, p, bull, cow, k, z, s = 0, x, i = 0;
 	int m[10];
 	bull = 0;
 	cow = 0;
+	srand((unsigned int)time(0));
 	do {
 		printf("Vvedite n, ot 1 do 9 ");
 		scanf("%d", &n);
