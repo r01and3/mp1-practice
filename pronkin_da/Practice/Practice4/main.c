@@ -3,6 +3,7 @@
 #include <time.h>
 
 char NAME[5][4] = { {'m', 'e', 'a', 't'}, {'m', 'i', 'l', 'k'}, {'s', 'a', 'l', 't'}, {'f', 'i', 's', 'h'}, {'e', 'g', 'g', 's'} };
+int BARCODE[6] = { 0, 1254, 7789, 4790, 1515, 1313 };
 int NAMEP = 0;
 float PRICE[5] = { 150.0f, 75.0f, 40.0f, 250.0f, 60.0f };
 int PRICEP = 0;
@@ -42,11 +43,11 @@ void in(int bc)
 	NAMEP++;
 	p.Price = PRICE[PRICEP];
 	PRICEP++;
-	p.Quantity = 1;
+	p.Quantity = 0;
 	p.FullPrice = p.Price - p.Price * ((rand() * (49) / RAND_MAX + 1) / 100.0f);
 	FULLPRICE += p.FullPrice;
 	SALE += p.Price * ((rand() * (49) / RAND_MAX + 1) / 100.0f);
-	p.BarCode = bc;
+	p.BarCode = BARCODE[bc];
 	P[NAMEP - 1] = p;
 	return;
 }
@@ -62,7 +63,9 @@ void out(int bc)
 
 void main()
 {
-	int i = 1;
+	int i = 0;
+	for (i; i < 6; i++) in(i);
+	i = 1;
 	while(i != 0)
 	{
 		printf("Enter Barcode Product Code\n");
