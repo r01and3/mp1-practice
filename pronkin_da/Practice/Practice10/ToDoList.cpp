@@ -104,7 +104,6 @@ void ToDoList::read(string filename) {
 void ToDoList::write(Date _date) {
 	for (int i = 0; i < n; i++)
 		if (task[i]->rdate() == _date) task[i]->print();
-	cout << "pnx" << endl;
 }
 
 ToDoList::~ToDoList() {
