@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5A51A30A-8250-4EAE-924A-E2CE6B89CFD8}</ProjectGuid>
+    <ProjectGuid>{A933C4D7-05AF-4797-A94E-5C26123B900C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Practice7</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -142,11 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="E:\Pro\Vector\Vector\Vector.h" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="Vector.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="E:\Pro\Vector\Vector\main.c" />
-    <ClCompile Include="E:\Pro\Vector\Vector\Vector.c" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

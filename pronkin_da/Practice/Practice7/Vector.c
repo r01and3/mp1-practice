@@ -13,7 +13,7 @@ void deleted(Vector v) {
 }
 
 Vector addition(Vector v1, Vector v2) {
-	if (v1.n != v2.n){
+	if (v1.n != v2.n) {
 		printf("Error: different dimension of vectors!");
 		return;
 	}
@@ -74,4 +74,3 @@ void out(Vector v) {
 	int i;
 	for (i = 0; i < v.n; i++)printf("%lf ", v.x[i]);
 }
-

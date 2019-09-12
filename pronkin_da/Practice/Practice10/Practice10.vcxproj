@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C1FF2083-3C01-4CC9-A460-DE6C4C5DBCD8}</ProjectGuid>
+    <ProjectGuid>{E8566C8E-2001-4B98-BD69-844DC6819D19}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Practice10</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>

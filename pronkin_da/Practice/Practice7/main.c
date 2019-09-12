@@ -1,7 +1,7 @@
 #include "Vector.h"
 #include <stdio.h>
 
-void main(){
+void main() {
 	int n1, n2, i;
 	double sp, _angle, _len;
 	double *a;

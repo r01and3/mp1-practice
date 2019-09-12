@@ -6,4 +6,3 @@ void Allday::print() {
 	cout << task << " ";
 	date.out();
 }
-

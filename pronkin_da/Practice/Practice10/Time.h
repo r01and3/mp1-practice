@@ -1,6 +1,4 @@
 #pragma once
-
-
 class Time {
 protected:
 	int h, m, duration;
@@ -10,3 +8,4 @@ public:
 	const Time operator=(Time&);
 	void out();
 };
+

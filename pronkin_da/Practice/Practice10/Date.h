@@ -12,3 +12,4 @@ public:
 	bool operator==(const Date) const;
 	void out();
 };
+

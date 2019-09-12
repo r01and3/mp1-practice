@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Task.h"
 #include <fstream>
 #include "Allday.h"

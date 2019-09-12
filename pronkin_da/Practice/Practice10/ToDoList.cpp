@@ -8,7 +8,7 @@ ToDoList::ToDoList() {
 void ToDoList::read(string filename) {
 	ifstream F;
 	F.open(filename);
-	string nstr; 
+	string nstr;
 	getline(F, nstr);
 	n = atoi(nstr.c_str());
 	task = new Task*[n];
@@ -48,7 +48,7 @@ void ToDoList::read(string filename) {
 				Date date(d, m, y);
 				task[j] = new Allday(name, date);
 			}
-			catch(char* str){
+			catch (char* str) {
 				cout << str << endl;
 			}
 		}
@@ -94,7 +94,7 @@ void ToDoList::read(string filename) {
 				Time time(h, min);
 				task[j] = new Timeinterval(name, date, time);
 			}
-			catch(char* str){
+			catch (char* str) {
 				cout << str << endl;
 			}
 		}
@@ -104,6 +104,7 @@ void ToDoList::read(string filename) {
 void ToDoList::write(Date _date) {
 	for (int i = 0; i < n; i++)
 		if (task[i]->rdate() == _date) task[i]->print();
+	cout << "pnx" << endl;
 }
 
 ToDoList::~ToDoList() {
