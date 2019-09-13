@@ -26,7 +26,6 @@ void in(int bc)
 	srand((unsigned int)time(0));
 	if (bc > 9999 || bc < 1)
 	{
-		//printf("Vvedeni nepravilnyi danyi");
 		return;
 	}
 	for (i = 0; i < NAMEP; i++)
@@ -44,9 +43,7 @@ void in(int bc)
 	p.Price = PRICE[PRICEP];
 	PRICEP++;
 	p.Quantity = 0;
-	p.FullPrice = p.Price - p.Price * ((rand() * (49) / RAND_MAX + 1) / 100.0f);
-	FULLPRICE += p.FullPrice;
-	SALE += p.Price * ((rand() * (49) / RAND_MAX + 1) / 100.0f);
+	p.FullPrice = 0;
 	p.BarCode = BARCODE[bc];
 	P[NAMEP - 1] = p;
 	return;
@@ -66,14 +63,16 @@ void main()
 	int i = 0;
 	for (i; i < 6; i++) in(i);
 	i = 1;
-	while(i != 0)
+	printf("Enter Barcode Product Code\n");
+	scanf("%d", &i);
+	do
 	{
+		in(i);
+		out(i);
 		printf("Enter Barcode Product Code\n");
 		printf("If you want to exit, enter 0\n");
 		scanf("%d", &i);
-		in(i);
-		out(i);
-	}
+	}while (i != 0);
 	printf("\n");
 	printf("Full Sale - %.2f\n", SALE);
 	printf("Full Price - %.2f", FULLPRICE);

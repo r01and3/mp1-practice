@@ -34,7 +34,7 @@ double Vector::Vlength() {
 	return sqrt(_leng);
 }
 
-Vector& Vector::operator+(const Vector &av) {
+Vector Vector::operator+(const Vector &av) {
 	if (n != av.n) throw "Vectors have a different number of components";
 	Vector *VR = new Vector(n);
 	(*VR).x = new double[n];
@@ -42,7 +42,7 @@ Vector& Vector::operator+(const Vector &av) {
 	return *this;
 }
 
-Vector& Vector::operator+(const Vector &av) {
+Vector Vector::operator-(const Vector &av) {
 	if (n != av.n) throw "Vectors have a different number of components";
 	Vector *VR = new Vector(n);
 	(*VR).x = new double[n];
@@ -50,14 +50,14 @@ Vector& Vector::operator+(const Vector &av) {
 	return *this;
 }
 
-double Vector::operator*(const Vector &av) {
+double Vector::operator*(const Vector &av) const{
 	if (n != av.n) throw "Vectors have a different number of components";
 	double sp = 0;
 	for (int i = 0; i < n; i++)sp = x[i] * av.x[i];
 	return sp;
 }
 
-Vector& Vector::operator*(double m) {
+Vector Vector::operator*(double m) {
 	for (int i = 0; i < n; i++) x[i] *= m;
 	return *this;
  }
@@ -68,12 +68,12 @@ const Vector& Vector::operator=(const Vector &av) {
 	return *this;
 }
 
-void Vector::operator+=(const Vector &av) {
+Vector& Vector::operator+=(const Vector &av) {
 	if (n != av.n) throw "Vectors have a different number of components";
 	for (int i = 0; i < n; i++)x[i] += av.x[i];
 }
 
-void Vector::operator-=(const Vector &av) {
+Vector& Vector::operator-=(const Vector &av) {
 	if (n != av.n) throw "Vectors have a different number of components";
 	for (int i = 0; i < n; i++)x[i] -= av.x[i];
 }

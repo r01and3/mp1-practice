@@ -5,7 +5,7 @@ protected:
 public:
 	Time();
 	Time(int, int);
-	const Time operator=(Time&);
+	const Time operator=(const Time&);
 	void out();
 };
 

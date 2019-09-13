@@ -9,7 +9,7 @@ protected:
 public:
 	Date();
 	Date(int, int, int);
-	bool operator==(const Date) const;
+	bool operator==(const Date&) const;
 	void out();
 };
 

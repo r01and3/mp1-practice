@@ -10,9 +10,9 @@ public:
 	~Container();
 	bool isFull() const;
 	bool isEmpty() const;
-	int Find(T* a) const;
-	void Add(T* a);
-	void Delete(T* a);
+	int Find(const T* a) const;
+	void Add(const T* a);
+	void Delete(const T* a);
 	T& operator[](int _n) const;
 };
 
@@ -47,13 +47,13 @@ bool Container<T*, maxsize>::isEmpty() const {
 }
 
 template <typename T, int maxsize>
-int Container<T*, maxsize>::Find(T* a) const {
+int Container<T*, maxsize>::Find(const T* a) const {
 	for (int i = 0; i < n; i++) if (*(arr[i]) == *a) return i;
 	return -1;
 }
 
 template <typename T, int maxsize>
-void Container<T*, maxsize>::Add(T* a) {
+void Container<T*, maxsize>::Add(const T* a) {
 	if (isFull()) throw "Array overflow";
 	arr[n] = new T;
 	arr[n] = new T(*a);
@@ -61,7 +61,7 @@ void Container<T*, maxsize>::Add(T* a) {
 }
 
 template <typename T, int maxsize>
-void Container<T*, maxsize>::Delete(T* a) {
+void Container<T*, maxsize>::Delete(const T* a) {
 	if (isEmpty()) throw "Array is empty";
 	int k = -1;
 	for (int i = 0; i < n; i++) if (*(arr[i]) == *a) k = i;

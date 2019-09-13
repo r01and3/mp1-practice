@@ -18,7 +18,7 @@ void Time::out() {
 	cout << h << ":" << m << endl;
 }
 
-const Time Time::operator=(Time &_time) {
+const Time Time::operator=(const Time &_time) {
 	h = _time.h;
 	m = _time.m;
 	return *this;

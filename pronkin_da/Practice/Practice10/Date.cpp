@@ -17,7 +17,7 @@ void Date::out() {
 	cout << d << "." << m << "." << y << " ";
 }
 
-bool Date::operator==(const Date _date) const {
+bool Date::operator==(const Date& _date) const {
 	if (d != _date.d || m != _date.m || y != _date.y) return false;
 	return true;
 }
