@@ -71,11 +71,13 @@ const Vector& Vector::operator=(const Vector &av) {
 Vector& Vector::operator+=(const Vector &av) {
 	if (n != av.n) throw "Vectors have a different number of components";
 	for (int i = 0; i < n; i++)x[i] += av.x[i];
+	return *this;
 }
 
 Vector& Vector::operator-=(const Vector &av) {
 	if (n != av.n) throw "Vectors have a different number of components";
 	for (int i = 0; i < n; i++)x[i] -= av.x[i];
+	return *this;
 }
 
 double& Vector::operator[](int an){
