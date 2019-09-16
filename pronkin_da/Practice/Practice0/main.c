@@ -5,7 +5,7 @@ void main() {
 	float x1, x2, y1, y2, r1, r2, rc;
 	printf("Vvedite x u y centri okryznosti u r radius okryznosti");
 	scanf("%f %f %f", &x1, &y1, &r1);
-	scanf("%f %f %f", &x2, &y2, &r2);
+	scanf("%f %f %f", &x2, &y2, &r2);/////////////
 	rc = sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
 	if (rc > fabs(r1 - r2) && rc < r1 + r2)
 	{

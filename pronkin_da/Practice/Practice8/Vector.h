@@ -10,7 +10,7 @@ public:
 	Vector(int, double*);
 	Vector(const Vector&);
 	~Vector();
-	double Vlength();
+	double Vlength() const;
 	Vector operator+(const Vector&);
 	Vector operator-(const Vector&);
 	double operator*(const Vector&) const;

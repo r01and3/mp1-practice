@@ -7,6 +7,7 @@ void main() {
 	Vector V1 = Vector(4, a);
 	Vector V2 = Vector(4, b);
 	Vector V3 = Vector(4);
+	// тест на конструктор копирования
 	try {
 		V3 = V1 + V2;
 	}
@@ -71,4 +72,5 @@ void main() {
 	Vector *V4 = new Vector(4);
 	*V4 = V1;
 	cout << (*V4)[2] << endl;
+	// delete
 }

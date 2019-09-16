@@ -73,5 +73,5 @@ void main() {
 		z = x;
 		p = 0;
 	}
-	printf("Cow = %d\nBull = %d\n", cow, bull);
+	printf("Cow = %d\nBull = %d\n", cow, bull); ////////// loop
 }

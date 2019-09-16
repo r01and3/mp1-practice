@@ -5,5 +5,5 @@
 class Allday : public Task {
 public:
 	Allday(string, Date&);
-	void print();
+	void print() const;
 };

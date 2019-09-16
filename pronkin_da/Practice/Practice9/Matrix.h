@@ -18,7 +18,7 @@ public:
 	Matrix operator-(double);
 	Matrix operator*(const Matrix&);
 	Matrix operator*(double);
-	const Matrix operator=(const Matrix&);
+	const Matrix& operator=(const Matrix&);
 	const double* operator[](int) const;
 	friend ostream& operator<<(ostream&, const Matrix&);
 };

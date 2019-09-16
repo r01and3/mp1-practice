@@ -55,7 +55,7 @@ int Container<T*, maxsize>::Find(const T* a) const {
 template <typename T, int maxsize>
 void Container<T*, maxsize>::Add(const T* a) {
 	if (isFull()) throw "Array overflow";
-	arr[n] = new T;
+	arr[n] = new T; ///////////////////////////////////
 	arr[n] = new T(*a);
 	n++;
 }

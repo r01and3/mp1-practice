@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-char NAME[5][4] = { {'m', 'e', 'a', 't'}, {'m', 'i', 'l', 'k'}, {'s', 'a', 'l', 't'}, {'f', 'i', 's', 'h'}, {'e', 'g', 'g', 's'} };
-int BARCODE[6] = { 0, 1254, 7789, 4790, 1515, 1313 };
+char NAME[][4] = { "meat", {'m', 'i', 'l', 'k'}, {'s', 'a', 'l', 't'}, {'f', 'i', 's', 'h'}, {'e', 'g', 'g', 's'} };
+char BARCODE[][6] = { "0000", 1254, 7789, 4790, 1515, 1313 };
 int NAMEP = 0;
 float PRICE[5] = { 150.0f, 75.0f, 40.0f, 250.0f, 60.0f };
 int PRICEP = 0;
@@ -29,7 +29,7 @@ void in(int bc)
 		return;
 	}
 	for (i = 0; i < NAMEP; i++)
-		if (bc == P[i].BarCode)
+		if (bc == P[i].BarCode) //strcmp
 		{
 			P[i].Quantity++;
 			P[i].FullPrice = P[i].FullPrice + P[i].Price - P[i].Price * ((rand() * (49) / RAND_MAX + 1) / 100.0f);
@@ -53,7 +53,7 @@ void out(int bc)
 {
 	int i, n;
 	for (i = 0; i < NAMEP; i++) if (P[i].BarCode == bc) break;
-	for (n = 0; n < 4; n++) printf("%c", P[i].Name[n]);
+	for (n = 0; n < 4; n++) printf("%c", P[i].Name[n]); // printf("%s", P[i].Name)
 	printf(" - %.2f - %d - %.2f\n", P[i].Price, P[i].Quantity, P[i].FullPrice);
 }
 

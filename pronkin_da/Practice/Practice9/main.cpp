@@ -12,6 +12,7 @@ void main() {
 	Matrix MC(c, 2, 3);
 	Matrix MTB(b, 4, 2);
 	Matrix R(2, 4);
+	// тест на конструктор копирования
 	try {
 		R = MA + MB;
 	}
