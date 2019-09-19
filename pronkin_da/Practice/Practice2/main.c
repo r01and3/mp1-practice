@@ -37,41 +37,45 @@ void main() {
 			i++;
 		}		
 	}
-	do {
-		printf("Vvedite x ");
-		scanf("%d", &x);
-		i = 0;
-		k = x;
-		z = 0;
-		for (i; i < n; i++) {
+	while (x != s) {
+		do {
+			printf("Vvedite x ");
+			scanf("%d", &x);
+			i = 0;
+			k = x;
+			z = 0;
+			for (i; i < n; i++) {
+				m[i] = k % 10;
+				k /= 10;
+			}
+			i = 0;
+			for (p = 0; p < n; p++) {
+				for (i = p + 1; i < n; i++) {
+					if (m[p] == m[i]) z++;
+				}
+			}
+		} while (z != 0);
+		k = s;
+		z = x;
+		for (i = 0; i < n; i++) {
 			m[i] = k % 10;
 			k /= 10;
 		}
-		i = 0;
-		for (p = 0; p < n; p++) {
-			for (i = p + 1; i < n; i++) {
-				if (m[p] == m[i]) z++;
-			}
-		}
-	} while (z != 0);
-	k = s;
-	z = x;
-	for (i = 0; i < n; i++) {
-		m[i] = k % 10;
-		k /= 10;
-	} 
-	p = 0;
-	for (i = 0; i < n; i++) {
-		while (z != 0) {
-			if (p == i && m[i] == z % 10)
-				bull++;
-			if (m[i] == z % 10 && p != i)
-				cow++;
-			z /= 10;
-			p++;
-		}
-		z = x;
 		p = 0;
+		for (i = 0; i < n; i++) {
+			while (z != 0) {
+				if (p == i && m[i] == z % 10)
+					bull++;
+				if (m[i] == z % 10 && p != i)
+					cow++;
+				z /= 10;
+				p++;
+			}
+			z = x;
+			p = 0;
+		}
+		printf("Cow = %d\nBull = %d\n", cow, bull);////////// loop
+		cow = bull = 0;
 	}
-	printf("Cow = %d\nBull = %d\n", cow, bull); ////////// loop
+	printf("you are win!!!!");
 }

@@ -8,13 +8,14 @@ void main() {
 	double b[] = { 2.4, 7.2, 6.0, 13.3, 7.4, 3.3, 10.7, 12.3 };
 	double c[] = { 22.1, 4.5, 5.0, 10.0, 2.4, 3.7};
 	Matrix MA(a, 2, 4);
+	Matrix MAC(MA);
 	Matrix MB(b, 2, 4);
 	Matrix MC(c, 2, 3);
 	Matrix MTB(b, 4, 2);
 	Matrix R(2, 4);
 	// тест на конструктор копирования
 	try {
-		R = MA + MB;
+		R = MAC + MB;
 	}
 	catch (char *str) {
 		cout << str << endl;

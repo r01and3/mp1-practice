@@ -11,7 +11,7 @@ public:
 	bool isFull() const;
 	bool isEmpty() const;
 	int Find(const T* a) const;
-	void Add(const T* a);
+	void Add(T* a);
 	void Delete(const T* a);
 	T& operator[](int _n) const;
 };
@@ -53,11 +53,10 @@ int Container<T*, maxsize>::Find(const T* a) const {
 }
 
 template <typename T, int maxsize>
-void Container<T*, maxsize>::Add(const T* a) {
+void Container<T*, maxsize>::Add(T* a) {
 	if (isFull()) throw "Array overflow";
 	arr[n] = new T; ///////////////////////////////////
-	arr[n] = new T(*a);
-	n++;
+	*arr[n++] = *a;
 }
 
 template <typename T, int maxsize>

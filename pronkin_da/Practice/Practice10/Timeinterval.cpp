@@ -1,10 +1,10 @@
 #include "Timeinterval.h"
 
-Timeinterval::Timeinterval(string _task, Date &_date, Time &_time) : Task(_task, _date) {
+Timeinterval::Timeinterval(string _task, Date &_date, Time &_time) : Task(_task,_date) {
 	time = _time;
 }
 
-void Timeinterval::print() {
+void Timeinterval::print() const{
 	cout << task << " ";
 	date.out();
 	time.out();

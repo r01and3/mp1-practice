@@ -18,19 +18,20 @@ void main() {
 	}
 	int b;
 	cin >> b;
+	Container<int, 6> CB(C);
 	try {
-		cout << C.Find(b) << endl;
+		cout << CB.Find(b) << endl;
 	}
 	catch(char* str){
 		cout << str << endl;
 	}
 	try {
-		C.Delete(b);
+		CB.Delete(b);
 	}
 	catch (char* str) {
 		cout << str << endl;
 	}
-	cout << C[2] << endl;
+	cout << CB[2] << endl;
 	Container<int*, 6> CS;
 	for (int i = 0; i < 4; i++) {
 		int a;
@@ -63,4 +64,5 @@ void main() {
 		cout << str << endl;
 	}
 	cout << CS[2] << endl;
+	~
 }

@@ -13,6 +13,6 @@ protected:
 public:
 	Task();
 	Task(string, Date&);
-	virtual void print() = 0;
-	Date rdate();
+	virtual void print() const = 0;
+	Date rdate() const;
 };

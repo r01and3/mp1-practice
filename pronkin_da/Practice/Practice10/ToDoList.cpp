@@ -5,7 +5,7 @@ ToDoList::ToDoList() {
 	task = new Task*[n];
 }
 
-void ToDoList::read(string filename) {
+void ToDoList::read(string filename){
 	ifstream F;
 	F.open(filename);
 	string nstr;
@@ -101,7 +101,7 @@ void ToDoList::read(string filename) {
 	}
 }
 
-void ToDoList::write(Date _date) {
+void ToDoList::write(Date _date) const{
 	for (int i = 0; i < n; i++)
 		if (task[i]->rdate() == _date) task[i]->print();
 }

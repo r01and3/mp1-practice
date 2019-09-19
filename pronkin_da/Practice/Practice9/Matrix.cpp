@@ -78,7 +78,7 @@ const double* Matrix::operator[](int _i) const {
 	return (m + _i * cols);
 }
 
-const Matrix Matrix::operator=(const Matrix &_matrix) {
+const Matrix& Matrix::operator=(const Matrix &_matrix) {
 	rows = _matrix.rows;
 	cols = _matrix.cols;
 	m = new double[rows * cols];

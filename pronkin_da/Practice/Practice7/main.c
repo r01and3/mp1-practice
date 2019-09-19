@@ -33,4 +33,7 @@ void main() {
 	_len = vectorlength(v3);
 	printf("%lf", _len);
 	//// delete
+	deleted(v1);
+	deleted(v2);
+	deleted(v3);
 }

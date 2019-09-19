@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-char NAME[][4] = { "meat", {'m', 'i', 'l', 'k'}, {'s', 'a', 'l', 't'}, {'f', 'i', 's', 'h'}, {'e', 'g', 'g', 's'} };
-char BARCODE[][6] = { "0000", 1254, 7789, 4790, 1515, 1313 };
+char NAME[5][4] = { "meat", "milk", "salt", "fish", "eggs"};
+char BARCODE[5][4] = {"1254", "7789", "4790", "1515", "1313" };
 int NAMEP = 0;
+int BARCODEP = 0;
 float PRICE[5] = { 150.0f, 75.0f, 40.0f, 250.0f, 60.0f };
 int PRICEP = 0;
 float SALE = 0;
@@ -15,12 +16,12 @@ struct PProduct
 	float Price;
 	int Quantity;
 	float FullPrice;
-	int BarCode;
+	char BarCode[4];
 };
 typedef struct PProduct Product;
 Product P[5] = {0};
 
-void in(int bc)
+void in(char bc)
 {
 	int i;
 	srand((unsigned int)time(0));
@@ -29,7 +30,7 @@ void in(int bc)
 		return;
 	}
 	for (i = 0; i < NAMEP; i++)
-		if (bc == P[i].BarCode) //strcmp
+		if (strcmp(bc, NAME[i])) //strcmp
 		{
 			P[i].Quantity++;
 			P[i].FullPrice = P[i].FullPrice + P[i].Price - P[i].Price * ((rand() * (49) / RAND_MAX + 1) / 100.0f);
@@ -38,13 +39,14 @@ void in(int bc)
 			return;
 		}
 	Product p;
-	for (i = 0; i < 4; i++) p.Name[i] = NAME[NAMEP][i];
+	strcpy(p.Name, NAME[NAMEP]);
 	NAMEP++;
 	p.Price = PRICE[PRICEP];
 	PRICEP++;
 	p.Quantity = 0;
 	p.FullPrice = 0;
-	p.BarCode = BARCODE[bc];
+	strcpy(p.BarCode, BARCODE[BARCODEP]);
+	BARCODEP++;
 	P[NAMEP - 1] = p;
 	return;
 }

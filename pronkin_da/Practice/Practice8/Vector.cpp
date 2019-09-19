@@ -27,7 +27,7 @@ Vector::~Vector() {
 	delete(x);
 }
 
-double Vector::Vlength() {
+double Vector::Vlength() const{
 	if (n < 2) throw "It is impossible to calculate the length of the vector";
 	double _leng = 0;
 	for (int i = 0; i < n; i++)_leng += x[i] * x[i];

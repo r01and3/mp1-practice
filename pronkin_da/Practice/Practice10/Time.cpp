@@ -14,7 +14,7 @@ Time::Time(int _h, int _m) {
 	m = _m;
 }
 
-void Time::out() {
+void Time::out() const{
 	cout << h << ":" << m << endl;
 }
 

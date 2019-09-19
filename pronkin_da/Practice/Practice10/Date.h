@@ -10,6 +10,6 @@ public:
 	Date();
 	Date(int, int, int);
 	bool operator==(const Date&) const;
-	void out();
+	void out() const;
 };
 

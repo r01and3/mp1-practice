@@ -13,7 +13,7 @@ Date::Date(int _d, int _m, int _y) {
 	y = _y;
 }
 
-void Date::out() {
+void Date::out() const{
 	cout << d << "." << m << "." << y << " ";
 }
 

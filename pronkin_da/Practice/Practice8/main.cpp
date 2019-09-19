@@ -6,10 +6,11 @@ void main() {
 	double b[] = {4, 3, 1, 13};
 	Vector V1 = Vector(4, a);
 	Vector V2 = Vector(4, b);
+	Vector VC2 = Vector(V2);
 	Vector V3 = Vector(4);
 	// тест на конструктор копирования
 	try {
-		V3 = V1 + V2;
+		V3 = V1 + VC2;
 	}
 	catch (char* str) {
 		cout << str << endl;
@@ -73,4 +74,5 @@ void main() {
 	*V4 = V1;
 	cout << (*V4)[2] << endl;
 	// delete
+	
 }

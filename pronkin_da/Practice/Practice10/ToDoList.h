@@ -13,5 +13,5 @@ public:
 	ToDoList();
 	~ToDoList();
 	void read(string);
-	void write(Date);
+	void write(Date) const;
 };

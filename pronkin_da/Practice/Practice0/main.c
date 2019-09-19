@@ -5,13 +5,12 @@ void main() {
 	float x1, x2, y1, y2, r1, r2, rc;
 	printf("Vvedite x u y centri okryznosti u r radius okryznosti");
 	scanf("%f %f %f", &x1, &y1, &r1);
-	scanf("%f %f %f", &x2, &y2, &r2);/////////////
-	rc = sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
-	if (rc > fabs(r1 - r2) && rc < r1 + r2)
-	{
-		printf("Okryznosti peresekaytsi");
+	scanf("%f %f %f", &x2, &y2, &r2);
+	if (r1 < 0 || r2 < 0) {
+		printf("Radiys ne mozhet bit otricatelnim");
 		return;
 	}
+	rc = sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
 	if (rc < fabs(r1 - r2))
 	{
 		printf("Odna okryznost lezit vnytri drygoy");
@@ -32,4 +31,10 @@ void main() {
 		printf("Okryznosti kasaytsi vnytrennim obrazom");
 		return;
 	}
+	if ((x1 == x2) && (y1 == y2) && (r1 = r2)) {
+		printf("Okryznosti sovpadayt");
+		return;
+	}
+	printf("Okryznosti peresekaytsi");
+	return;
 }
