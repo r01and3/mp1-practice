@@ -96,3 +96,14 @@ ostream& operator<<(ostream &out, const Matrix &_matrix) {
 	}
 	return out;
 }
+
+istream& operator>>(istream &in, Matrix &m) {
+	for (int i = 0, j = 0; i < m.rows; i++) {
+		while (j < m.cols * (i + 1)) {
+			cin >> m.m[j];
+			j++;
+		}
+		if (j == m.cols) cout << " " << endl;
+	}
+	return in;
+}

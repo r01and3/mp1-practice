@@ -62,4 +62,6 @@ void main() {
 	catch (char *str) {
 		cout << str << endl;
 	}
+	cin >> R;
+	cout << R << endl;
 }

@@ -95,6 +95,18 @@ void Vector::operator delete(void* v) {
 	free(v);
 }
 
+ostream& operator<<(ostream &out, const Vector &v) {
+	cout << "(";
+	for (int i = 0; i < (v.n - 1); i++) {
+		cout << v.x[i] << ",";
+	}
+	cout << v.x[v.n - 1] << ")";
+	return out;
+}
 
+istream& operator>>(istream &in, Vector &v) {
+	for (int i = 0; i < v.n; i++) cin >> v.x[i];
+	return in;
+}
 
 

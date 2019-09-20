@@ -21,4 +21,6 @@ public:
 	Vector operator*(double);
 	void* operator new(size_t);
 	void operator delete(void*);
+	friend ostream& operator<<(ostream&, const Vector&);
+	friend istream& operator>>(istream&, Vector&);
 };

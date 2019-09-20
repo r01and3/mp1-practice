@@ -79,6 +79,7 @@ void count(namesize a[], int n)
 			a[b] = c[j];
 			b++;
 		}
+	free(c);
 }
 
 void quicksort(namesize a[], int n1, int n2)
@@ -145,6 +146,8 @@ void merge(namesize arr[], int l, int m, int r)
 		j++;
 		k++;
 	}
+	free(L);
+	free(R);
 }
 
 void mergesort(namesize arr[], int l, int r)
@@ -227,6 +230,7 @@ void main()
 	int f = 1;
 	int par, i, n;
 	namesize* b;
+	namesize* b0;
 	clock_t start, end;
 	printf("Enter directory name:\n");
 	a = (char*)malloc(MAX_LEN);
@@ -238,10 +242,9 @@ void main()
 	b = (namesize*)malloc(n * sizeof(namesize));
 	par = ListDirectoryContents(xa, b, n);
 	if (par == 1) return;
+	b0 = (namesize*)malloc(n * sizeof(namesize));
 	while (1)
 	{
-		namesize* b0;
-		b0 = (namesize*)malloc(n * sizeof(namesize));
 		memcpy(b0, b, n*sizeof(namesize));
 		out(b0, n);
 		out(b, n);
@@ -300,4 +303,6 @@ void main()
 		scanf("%d", &f);
 		if (f == 0) return;
 	}
+	free(b0);
+	free(b);
 }

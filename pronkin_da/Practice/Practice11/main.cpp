@@ -64,5 +64,4 @@ void main() {
 		cout << str << endl;
 	}
 	cout << CS[2] << endl;
-	~
 }

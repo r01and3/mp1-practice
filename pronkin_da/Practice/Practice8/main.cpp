@@ -73,6 +73,6 @@ void main() {
 	Vector *V4 = new Vector(4);
 	*V4 = V1;
 	cout << (*V4)[2] << endl;
-	// delete
-	
+	cin >> V1;
+	cout << V1 << endl;
 }
